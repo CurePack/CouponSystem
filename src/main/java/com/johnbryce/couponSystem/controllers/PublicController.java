@@ -12,7 +12,7 @@ import java.util.Locale;
 @RestController
 @RequestMapping("api/public")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*" /*,allowedHeaders = "*"*/)
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PublicController {
 
     private final PublicService publicService;
