@@ -18,10 +18,10 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query(value = "INSERT INTO customers_coupons (customer_id, coupons_id) VALUES (:customerId, :couponId)", nativeQuery = true)
     void buyCoupon(int customerId, int couponId);
 
-    @Query(value = "SELECT id FROM couponsdb2.customers WHERE email = :email and password = :password", nativeQuery = true)
+    @Query(value = "SELECT id FROM customers WHERE email = :email and password = :password", nativeQuery = true)
     int loggedCustomer(String email, String password);
 
-    @Query(value = "SELECT id FROM couponsdb2.customers WHERE email = :email", nativeQuery = true)
+    @Query(value = "SELECT id FROM customers WHERE email = :email", nativeQuery = true)
     int findIdByEmail(String email);
 
 
