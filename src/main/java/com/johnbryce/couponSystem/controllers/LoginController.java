@@ -41,13 +41,13 @@ public class LoginController {
         return loginManager.login(email, password, clientType);
     }
 
-//    @PostMapping("register")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public void register(@RequestBody RegisterReqDto registerReqDto) throws CouponSystemException {
-//        String email = registerReqDto.getEmail();
-//        String password = registerReqDto.getPassword();
-//        companyService.register(email, password);
-//    }
+    @PostMapping("register")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void register(@RequestBody RegisterReqDto registerReqDto) throws CouponSystemException {
+        String email = registerReqDto.getEmail();
+        String password = registerReqDto.getPassword();
+        companyService.register(email, password);
+    }
 
 //    @PostMapping("login")
 //    @ResponseStatus(HttpStatus.CREATED)
