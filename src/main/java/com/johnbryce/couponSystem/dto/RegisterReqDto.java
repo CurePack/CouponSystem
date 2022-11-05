@@ -12,5 +12,4 @@ public class RegisterReqDto {
     private String email;
     private String password;
     private ClientType clientType;
-
 }
