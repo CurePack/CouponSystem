@@ -1,7 +1,6 @@
 package com.johnbryce.couponSystem.beans;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.Hibernate;
