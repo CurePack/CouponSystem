@@ -4,7 +4,6 @@ import com.johnbryce.couponSystem.beans.Company;
 import com.johnbryce.couponSystem.dto.CompanyDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

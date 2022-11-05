@@ -1,12 +1,9 @@
 package com.johnbryce.couponSystem.mappers;
 
-import com.johnbryce.couponSystem.beans.Company;
 import com.johnbryce.couponSystem.beans.Customer;
-import com.johnbryce.couponSystem.dto.CompanyDto;
 import com.johnbryce.couponSystem.dto.CustomerDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

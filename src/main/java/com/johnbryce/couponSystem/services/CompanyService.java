@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.UUID;
 
 public interface CompanyService {
-   void register(String email,String password) throws CouponSystemException;
    UUID login(String email, String password, ClientType clientType) throws CouponSystemException;
    void logout();
    CouponDto addCoupon(int userId, CouponDto couponDto) throws CouponSystemException;

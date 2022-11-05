@@ -5,20 +5,16 @@ import com.johnbryce.couponSystem.dto.LoginReqDto;
 import com.johnbryce.couponSystem.dto.LoginResDto;
 import com.johnbryce.couponSystem.dto.RegisterReqDto;
 import com.johnbryce.couponSystem.exceptions.CouponSystemException;
-import com.johnbryce.couponSystem.exceptions.ErrMsg;
-import com.johnbryce.couponSystem.exceptions.ExceptionUtils;
 import com.johnbryce.couponSystem.login.LoginManager;
+import com.johnbryce.couponSystem.login.RegManager;
 import com.johnbryce.couponSystem.repos.CompanyRepository;
 import com.johnbryce.couponSystem.repos.CustomerRepository;
 import com.johnbryce.couponSystem.services.AdminService;
 import com.johnbryce.couponSystem.services.CompanyService;
 import com.johnbryce.couponSystem.services.CustomerService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.UUID;
 
 @RestController
 @CrossOrigin
@@ -32,6 +28,7 @@ public class LoginController {
     private final CompanyRepository companyRepository;
     private final CustomerRepository customerRepository;
     private final LoginManager loginManager;
+    private final RegManager regManager;
 
     @PostMapping("login")
     public LoginResDto login(@RequestBody LoginReqDto loginReqDto) throws CouponSystemException {
@@ -46,7 +43,8 @@ public class LoginController {
     public void register(@RequestBody RegisterReqDto registerReqDto) throws CouponSystemException {
         String email = registerReqDto.getEmail();
         String password = registerReqDto.getPassword();
-        companyService.register(email, password);
+        ClientType clientType = registerReqDto.getClientType();
+        regManager.register(email, password, clientType);
     }
 
 //    @PostMapping("login")

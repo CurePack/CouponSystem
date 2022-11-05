@@ -48,17 +48,6 @@ public class CompanyServiceImpl implements CompanyService {
     private final TokenManager tokenManager;
 
     @Override
-    public void register(String email, String password) throws CouponSystemException {
-
-        if(companyRepository.existsByEmail(email)){
-            throw new CouponSystemException(ErrMsg.EMAIL_EXIST);
-        }
-
-        Company company = new Company(email,password, ClientType.COMPANY);
-        companyRepository.save(company);
-    }
-
-    @Override
     public UUID login(String email, String password, ClientType clientType) throws CouponSystemException {
         if(!companyRepository.existsByEmailAndPassword(email,password)){
             throw new CouponSystemException(ErrMsg.EMAIL_OR_PASSWORD_INCORRECT);
@@ -73,7 +62,6 @@ public class CompanyServiceImpl implements CompanyService {
     public void logout() {
 
     }
-
 
     @Override
     public CouponDto addCoupon(int userId, CouponDto couponDto) throws CouponSystemException {
