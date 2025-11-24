@@ -1,0 +1,29 @@
+.Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+.Header .logo {
+    margin-left: 20px;
+    
+}
+
+.Header h1 {
+    margin-left: 5px;
+    font-size: 35px;
+    flex-grow: 1;
+    color: rgb(255, 255, 0);
+    text-shadow: 2px 2px 2px rgba(43,29,3,0.66);
+}
+
+.Header .login {
+    margin: 50px;
+    color: orange;
+}
+
+.Header .darkmode {
+
+}

@@ -1,0 +1,37 @@
+.CustomerCouponList {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
+    text-align: center;
+    color: orange;
+}
+
+.CustomerCouponList h1 {
+    
+}
+
+.CustomerCouponList .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.CustomerCouponList .selectMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.CustomerCouponList select {
+    background-color: grey;
+}
+
+.CustomerCouponList input {
+    background-color: grey;
+    height: 20px;
+    width: 70px;
+}

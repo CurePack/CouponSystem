@@ -1,0 +1,13 @@
+.CouponList {
+    overflow-y: auto;
+    height: 100%;
+    text-align: center;
+    color: orange;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

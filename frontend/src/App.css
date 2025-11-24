@@ -1,0 +1,29 @@
+.App{
+    font-family: RingBearer;
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    grid-template-columns: repeat(12,1fr);
+    height:100%;
+    width:100%;
+}
+
+.App > .Header{
+    grid-column: 12 span;
+}
+
+.App > .Menu{
+    grid-column: 2 span;
+}
+
+.App > .Main{
+    grid-column: 10 span;
+}
+
+.App > .Footer{
+    grid-column: 12 span;
+}
+
+@font-face {
+    font-family: 'Ringbearer';
+    src: local('Ringbearer'), url(./Assets/Fonts/RINGM___.TTF) format('truetype');
+}

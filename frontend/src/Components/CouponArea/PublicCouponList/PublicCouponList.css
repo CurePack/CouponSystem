@@ -1,0 +1,33 @@
+.PublicCouponList {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
+    text-align: center;
+    color: orange;
+}
+
+.PublicCouponList .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.PublicCouponList .selectMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.PublicCouponList select {
+    background-color: grey;
+}
+
+.PublicCouponList input {
+    background-color: grey;
+    height: 20px;
+    width: 70px;
+}

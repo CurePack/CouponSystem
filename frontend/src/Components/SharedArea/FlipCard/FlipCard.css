@@ -1,0 +1,157 @@
+.FlipCard {}
+
+.flip-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.flip-card:hover {
+    border-radius: 25px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+    border-radius: 25px;
+}
+
+/* Style the back side */
+.flip-card-back {
+    height: 110%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkred;
+    color: orange;
+    transform: rotateY(180deg);
+    border-radius: 25px;
+    overflow: hidden;
+    
+}
+
+.flip-card-back h1 {
+    font-size: 20px;
+}
+
+.flip-card-back p {
+
+}
+
+/* For Admin and Company only*/
+.buttons {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.purchaseButton .cart{
+
+}
+
+.purchaseButton .cart:hover {
+    transition: transform 0.3s;
+    transform: scale(1.2,1.2);
+}
+
+.removeButton .trash {
+
+}
+
+.removeButton .trash:hover {
+    transition: transform 0.3s;
+    transform: scale(1.2,1.2);
+}
+
+.ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+  }
+  .ribbon::before,
+  .ribbon::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid #351414;
+  }
+  .ribbon span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 15px 0;
+    background-color: #881b1b;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    color: #fff;
+    font: 700 18px/1 'Lato', sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  /* top left*/
+  .ribbon-top-left {
+    top: -10px;
+    left: -10px;
+  }
+  .ribbon-top-left::before,
+  .ribbon-top-left::after {
+    border-top-color: transparent;
+    border-left-color: transparent;
+  }
+  .ribbon-top-left::before {
+    top: 0;
+    right: 0;
+  }
+  .ribbon-top-left::after {
+    bottom: 0;
+    left: 0;
+  }
+  .ribbon-top-left span {
+    right: -25px;
+    top: 30px;
+    transform: rotate(-45deg);
+  }

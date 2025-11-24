@@ -1,0 +1,20 @@
+.AuthMenu {
+	
+}
+
+.AuthMenu .reg {
+    opacity: 10%;
+}
+
+.AuthMenu .log {
+    color: red;
+    font-size: 20px;
+}
+
+.AuthMenu .log:hover {
+    
+}
+
+.AuthMenu .out {
+    color: orangered;
+}

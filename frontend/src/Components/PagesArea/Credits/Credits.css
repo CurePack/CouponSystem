@@ -1,0 +1,8 @@
+.Credits {
+}
+
+.Credits p::first-letter {
+    color: red;
+}
+
+

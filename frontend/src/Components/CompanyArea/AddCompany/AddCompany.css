@@ -1,0 +1,13 @@
+.AddCompany {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    align-self: center;
+    color: orange;
+}
+
+.AddCompany select{
+    width: 100%;
+}

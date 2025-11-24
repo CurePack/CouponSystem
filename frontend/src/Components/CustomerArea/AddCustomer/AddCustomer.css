@@ -1,0 +1,13 @@
+.AddCustomer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    align-self: center;
+    color: orange;
+}
+
+.AddCustomer select {
+    width: 100%;
+}

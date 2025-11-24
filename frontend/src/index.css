@@ -1,0 +1,170 @@
+
+* {
+  box-sizing: border-box;
+}
+
+@-ms-viewport {
+  max-zoom: 150%;
+}
+
+body {
+  /* background-color: salmon; */
+  background-image: url(./Assets/Images/backgroundDark1.jpg);
+  background-size: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html,body,#root{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+p{
+  font-size: large;
+}
+
+.image-distance{
+  margin: 2px;
+  padding: 2px;
+}
+
+.box {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px 10px #888888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.one-line {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+form {
+  text-align: start;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+form span {
+  font-weight: 700;
+  color: red;
+}
+
+input[type=text], input[type=date], input[type=number], select[name=category], select[name=clientType], input[type=datetime-local], input[type=email], input[type=password] {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+input[type=number]:disabled {
+  font-weight: 700;
+
+  background-color: #88888880;
+}
+
+label {
+  margin-left: 2px;
+  font-weight: 500;
+  display: inline-block;
+  display: inline-block;
+  text-align: start;
+}
+
+.button-app {
+  margin: 5px;
+  width: 100%;
+  height: 30px;
+  background-color: #226639;
+  color: white;
+  border: 2px solid #e7e7e7;
+  border-radius: 5px;
+}
+
+.button-app-default {
+  margin: 5px;
+  width: 100%;
+  height: 30px;
+  background-color: #343534;
+  color: white;
+  border: 2px solid #e7e7e7;
+  border-radius: 5px;
+}
+
+.button-app-danger {
+  margin: 5px;
+  width: 100%;
+  height: 30px;
+  background-color: #df1a0c;
+  color: white;
+  border: 2px solid #e7e7e7;
+  border-radius: 5px;
+}
+
+.button-app:hover {
+  background-color: rgb(84, 129, 99);
+  color: white;
+}
+
+.button-app-default:hover {
+  background-color: #727572;
+  color: white;
+}
+
+.button-app-danger:hover {
+  background-color: #dd6d65;
+  color: white;
+}
+
+.button-app:disabled {
+  background-color: rgb(172, 175, 173);
+  color: white;
+}
+
+.span-errors {
+  color: red;
+  font-weight: 700;
+}
+
+.full {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: green;
+  padding: 3px;
+}
+
+.empty {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background: tomato;
+  padding: 3px;
+}

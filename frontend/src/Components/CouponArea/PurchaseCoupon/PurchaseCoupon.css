@@ -1,0 +1,38 @@
+.PurchaseCoupon {
+    height: 100%;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PurchaseCoupon .box h2 {
+    font-size: 30px;
+    color: yellow;
+}
+
+.PurchaseCoupon .box p {
+    color: orange;
+}
+
+.box span {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.box .cross {
+    color: red;
+}
+.box .cross:hover {
+    transform: scale(1.5);
+}
+
+.box .check {
+    color: green;
+}
+.box .check:hover {
+    transform: scale(1.5);
+}

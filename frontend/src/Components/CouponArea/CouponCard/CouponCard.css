@@ -1,0 +1,23 @@
+.card {
+    border: 1px solid #f1f1f1;
+    margin: 5px;
+    padding: 5px;
+    background-size: cover;
+    color: yellow;
+}
+
+.card backgroundImage {
+    height: 30%;
+    width: 30%;
+}
+
+.card:hover {
+    box-shadow: 0 16px 32px 0 rgba(255, 195, 30, 2.2);
+}
+.card:hover .buttons {
+    opacity: 100%;
+}
+
+.buttons {
+    opacity: 30%;
+}

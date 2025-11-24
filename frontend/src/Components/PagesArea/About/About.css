@@ -1,0 +1,13 @@
+.About {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.About p {
+    margin: 5px;
+
+}
+
+.About p:first-letter {
+    font-size: 50px;
+}
