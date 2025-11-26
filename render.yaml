@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: lordofcoupons
+    env: docker
+    plan: free
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    autoDeploy: true
+    envVars:
+      - key: SPRING_JPA_DATABASE_PLATFORM
+        value: org.hibernate.dialect.PostgreSQLDialect
+      - key: SPRING_H2_CONSOLE_ENABLED
+        value: "false"
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      # Set these in the Render dashboard after the database is created:
+      # SPRING_DATASOURCE_URL=jdbc:postgresql://<host>:5432/<db>?sslmode=require
+      # SPRING_DATASOURCE_USERNAME=<user>
+      # SPRING_DATASOURCE_PASSWORD=<password>
+
+databases:
+  - name: lordofcoupons-db
+    plan: free

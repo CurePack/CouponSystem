@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.020f6d35.css",
-    "main.js": "/static/js/main.1bb5a0ce.js",
-    "static/js/787.e8f8a616.chunk.js": "/static/js/787.e8f8a616.chunk.js",
+    "main.css": "/static/css/main.3fc4f819.css",
+    "main.js": "/static/js/main.e056b8b2.js",
+    "static/js/453.05ba73ab.chunk.js": "/static/js/453.05ba73ab.chunk.js",
     "static/media/mainBackground.jpg": "/static/media/mainBackground.0e6ad9786f6ca713da0c.jpg",
     "static/media/backgroundDark1.jpg": "/static/media/backgroundDark1.1eb8e72c5b4b373c464f.jpg",
     "static/media/travel.jpg": "/static/media/travel.fdfb9a66a2eb71b7802a.jpg",
+    "static/media/admin1.jpg": "/static/media/admin1.92e5cde78edac912f444.jpg",
     "static/media/food2.jpg": "/static/media/food2.3fd60455712657fb1564.jpg",
-    "static/media/RINGM___.TTF": "/static/media/RINGM___.81688da96bd2ba917e09.TTF",
     "static/media/travelIsengard.jpg": "/static/media/travelIsengard.81712973c8c679bac7b9.jpg",
     "static/media/gandalf2.jpg": "/static/media/gandalf2.ac9ba3a9c37b68102011.jpg",
     "static/media/food1.jpg": "/static/media/food1.06718b894aac8b22a7f5.jpg",
@@ -48,12 +48,12 @@
     "static/media/iwantyouforadventure.jpg": "/static/media/iwantyouforadventure.74b659d8d1dc882b85d9.jpg",
     "static/media/gollum2.jpg": "/static/media/gollum2.aa74c91007fd62aedbf9.jpg",
     "index.html": "/index.html",
-    "main.020f6d35.css.map": "/static/css/main.020f6d35.css.map",
-    "main.1bb5a0ce.js.map": "/static/js/main.1bb5a0ce.js.map",
-    "787.e8f8a616.chunk.js.map": "/static/js/787.e8f8a616.chunk.js.map"
+    "main.3fc4f819.css.map": "/static/css/main.3fc4f819.css.map",
+    "main.e056b8b2.js.map": "/static/js/main.e056b8b2.js.map",
+    "453.05ba73ab.chunk.js.map": "/static/js/453.05ba73ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.020f6d35.css",
-    "static/js/main.1bb5a0ce.js"
+    "static/css/main.3fc4f819.css",
+    "static/js/main.e056b8b2.js"
   ]
 }
