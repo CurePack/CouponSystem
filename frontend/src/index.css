@@ -1,170 +1,174 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap');
+
+:root {
+  --bg: #0a0f1f;
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-strong: rgba(255, 255, 255, 0.12);
+  --primary: #f9d342;
+  --accent: #6ad1c5;
+  --danger: #ff6b6b;
+  --text: #e9ecf2;
+  --muted: #a6b1c2;
+  --border: rgba(255, 255, 255, 0.15);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --radius: 14px;
+  --font-main: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+
 * {
   box-sizing: border-box;
 }
 
-@-ms-viewport {
-  max-zoom: 150%;
-}
-
-body {
-  /* background-color: salmon; */
-  background-image: url(./Assets/Images/backgroundDark1.jpg);
-  background-size: 100%;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-html,body,#root{
+html, body, #root {
   height: 100%;
   width: 100%;
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
 }
 
-p{
-  font-size: large;
+body {
+  background-image:
+    linear-gradient(145deg, rgba(106, 209, 197, 0.08), rgba(249, 211, 66, 0.08)),
+    url(./Assets/Images/backgroundDark1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(1px);
 }
 
-.image-distance{
-  margin: 2px;
-  padding: 2px;
+p {
+  font-size: 1rem;
+  color: var(--muted);
 }
 
-.box {
-  border: 1px solid;
-  padding: 10px;
-  box-shadow: 5px 10px 8px 10px #888888;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+code {
+  font-family: 'Space Grotesk', Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.one-line {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.glass {
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 form {
-  text-align: start;
-  width: 250px;
+  width: min(520px, 100%);
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
 }
-
 
 form span {
-  font-weight: 700;
-  color: red;
+  font-weight: 600;
+  color: var(--danger);
 }
 
-input[type=text], input[type=date], input[type=number], select[name=category], select[name=clientType], input[type=datetime-local], input[type=email], input[type=password] {
+label {
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+input[type=text], input[type=date], input[type=number], select[name=category], select[name=clientType], input[type=datetime-local], input[type=email], input[type=password], select[name=image] {
   width: 100%;
-  padding: 6px 10px;
-  margin: 4px 0;
-  box-sizing: border-box;
-  border: none;
+  padding: 12px 14px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(249, 211, 66, 0.2);
 }
 
 input[type=number]:disabled {
   font-weight: 700;
-
-  background-color: #88888880;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--muted);
 }
 
-label {
-  margin-left: 2px;
-  font-weight: 500;
-  display: inline-block;
-  display: inline-block;
-  text-align: start;
+.button-app, .button-app-default, .button-app-danger {
+  width: 100%;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
 }
 
 .button-app {
-  margin: 5px;
-  width: 100%;
-  height: 30px;
-  background-color: #226639;
-  color: white;
-  border: 2px solid #e7e7e7;
-  border-radius: 5px;
+  background: linear-gradient(135deg, var(--primary), #f5b53f);
+  color: #1a1a1a;
+  box-shadow: var(--shadow);
 }
 
 .button-app-default {
-  margin: 5px;
-  width: 100%;
-  height: 30px;
-  background-color: #343534;
-  color: white;
-  border: 2px solid #e7e7e7;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #1f2738, #323b4f);
+  color: var(--text);
+  box-shadow: var(--shadow);
 }
 
 .button-app-danger {
-  margin: 5px;
-  width: 100%;
-  height: 30px;
-  background-color: #df1a0c;
-  color: white;
-  border: 2px solid #e7e7e7;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
+  color: #1a1a1a;
+  box-shadow: var(--shadow);
 }
 
-.button-app:hover {
-  background-color: rgb(84, 129, 99);
-  color: white;
-}
-
-.button-app-default:hover {
-  background-color: #727572;
-  color: white;
-}
-
+.button-app:hover,
+.button-app-default:hover,
 .button-app-danger:hover {
-  background-color: #dd6d65;
-  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .button-app:disabled {
-  background-color: rgb(172, 175, 173);
-  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--muted);
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
 .span-errors {
-  color: red;
+  color: var(--danger);
   font-weight: 700;
 }
 
-.full {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-  background: green;
-  padding: 3px;
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
-.empty {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-  background: tomato;
-  padding: 3px;
+/* Hide Notyf message text entirely */
+.notyf__message {
+  display: none !important;
 }

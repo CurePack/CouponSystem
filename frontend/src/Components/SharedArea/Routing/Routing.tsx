@@ -1,7 +1,5 @@
-import { Route, Routes } from "react-router-dom";
-import App from "../../../App";
+import { Route, Routes, Navigate } from "react-router-dom";
 import About from "../../PagesArea/About/About";
-import Credits from "../../PagesArea/Credits/Credits";
 import Home from "../../PagesArea/Home/Home";
 import AddCoupon from "../../CouponArea/AddCoupon/AddCoupon";
 import CouponList from "../../CouponArea/CouponList/CouponList";
@@ -28,6 +26,7 @@ import { CouponModel } from "../../../Models/CouponModel";
 import store from "../../../Redux/store";
 import DeletePurchasedCoupon from "../../CouponArea/DeletePurchasedCoupon/DeletePurchasedCoupon";
 import { UserModel } from "../../../Models/UserModel";
+import Profile from "../../PagesArea/Profile/Profile";
 
 function Routing(): JSX.Element {
 
@@ -38,9 +37,8 @@ function Routing(): JSX.Element {
         <div className="Routing">
 			
             <Routes>
-                <Route path='/' element={<App/>}/>
+                <Route path='/' element={<Navigate to="/home" replace />} />
                 <Route path='/home' element={<Home/>}/>
-                <Route index element={<Home/>}/>
                 <Route path='/public/coupons' element={<PublicCouponList/>}/>
 
                 <Route path='/admin/companies' element={<CompanyList/>}/>
@@ -61,11 +59,11 @@ function Routing(): JSX.Element {
                 <Route path='/companies/coupons/edit/:id' element={<EditCoupon/>}/>
                 <Route path='/companies/coupons/delete/:id' element={<DeleteCoupon/>}/>
                 <Route path='/about' element={<About/>}/>
-                <Route path='/credits' element={<Credits/>}/>
                 <Route path='/register' element={<Register/>}/>
                 <Route path='/login' element={<Login/>}/>
                 <Route path='/logout' element={<Logout/>}/>
-                <Route path='*' element={<Page404/>}/>
+                <Route path='/profile' element={<Profile/>}/>
+                <Route path='*' element={<Navigate to="/home" replace />} />
             </Routes>
         </div>
     );

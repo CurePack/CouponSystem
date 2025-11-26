@@ -1,107 +1,250 @@
-.FlipCard {}
+.flip-card {
+    background-color: transparent;
+    width: 260px;
+    height: 360px;
+    perspective: 1200px;
+    margin: 8px;
+    padding: 6px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
 .flip-card img {
     width: 100%;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
-.flip-card {
-    background-color: transparent;
-    width: 250px;
-    height: 350px;
-    perspective: 1000px;
-    margin: 5px;
-    padding: 5px;
-}
-
-.flip-card:hover {
-    border-radius: 25px;
-}
-
-/* This container is needed to position the front and back side */
 .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
+    text-align: left;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
+.force-flip .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
-    /* Safari */
     backface-visibility: hidden;
-
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
 }
 
-/* Style the front side (fallback if image is missing) */
 .flip-card-front {
-    background-color: #bbb;
-    color: black;
-    border-radius: 25px;
+    background: #0f1628;
 }
 
-/* Style the back side */
-.flip-card-back {
-    height: 110%;
+.flip-card-front .front-overlay {
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 14px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 20%, rgba(0,0,0,0.6) 100%);
+    gap: 10px;
+}
+
+.front-text h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.front-text p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.front-meta {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background-color: darkred;
-    color: orange;
+    gap: 6px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.08);
+    color: var(--text);
+}
+
+.badge.subtle {
+    align-self: flex-start;
+    background: rgba(255,255,255,0.12);
+}
+
+.badge.price {
+    background: linear-gradient(135deg, var(--primary), #f5b53f);
+    color: #1a1a1a;
+    border: none;
+}
+
+.badge.amount.ok {
+    background: rgba(106, 209, 197, 0.2);
+    border-color: rgba(106, 209, 197, 0.5);
+    color: #c4fff8;
+}
+
+.badge.amount.low {
+    background: rgba(255, 107, 107, 0.2);
+    border-color: rgba(255, 107, 107, 0.6);
+    color: #ffd4d4;
+}
+
+.flip-card-back {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    padding: 16px;
+    background: radial-gradient(circle at 20% 20%, rgba(249, 211, 66, 0.08), transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(106, 209, 197, 0.1), transparent 40%),
+                rgba(15, 22, 40, 0.92);
+    color: var(--text);
     transform: rotateY(180deg);
-    border-radius: 25px;
-    overflow: hidden;
-    
 }
 
-.flip-card-back h1 {
-    font-size: 20px;
+.back-top {
+    text-align: center;
 }
 
-.flip-card-back p {
-
+.back-title {
+    margin: 0 0 6px;
+    text-align: center;
 }
 
-/* For Admin and Company only*/
+.back-desc {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 8px;
+    text-align: center;
+}
+
+.flip-card-back .details {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.flip-card-back .dates {
+    color: var(--muted);
+    font-size: 13px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cta-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.pill-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.pill {
+    padding: 8px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    font-weight: 700;
+    font-size: 13px;
+    min-width: 86px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pill.price {
+    background: rgba(249, 211, 66, 0.2);
+    border-color: rgba(249, 211, 66, 0.5);
+    color: #ffe7a1;
+}
+
+.pill.amount.ok {
+    background: rgba(106, 209, 197, 0.2);
+    border-color: rgba(106, 209, 197, 0.5);
+    color: #d4fff7;
+}
+
+.pill.amount.low {
+    background: rgba(255, 107, 107, 0.2);
+    border-color: rgba(255, 107, 107, 0.6);
+    color: #ffd4d4;
+}
+
 .buttons {
     display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: space-around;
-    align-items: flex-end;
-    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    justify-content: center;
 }
 
-.purchaseButton .cart{
-
+.btn-icon, .btn-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.06);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-.purchaseButton .cart:hover {
-    transition: transform 0.3s;
-    transform: scale(1.2,1.2);
+.btn-icon.danger, .btn-pill.danger {
+    background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
+    color: #1a1a1a;
+    border: none;
 }
 
-.removeButton .trash {
-
+.btn-pill.primary {
+    background: linear-gradient(135deg, var(--primary), #f5b53f);
+    color: #1a1a1a;
+    border: none;
 }
 
-.removeButton .trash:hover {
-    transition: transform 0.3s;
-    transform: scale(1.2,1.2);
+.btn-icon:hover,
+.btn-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 .ribbon {

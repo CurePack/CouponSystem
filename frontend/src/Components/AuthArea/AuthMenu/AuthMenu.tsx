@@ -18,21 +18,19 @@ function AuthMenu(): JSX.Element {
     }, []);
     return (
         <div className="AuthMenu">
-            {user?.token ?
+            {user?.token ? (
                 <>
                     <span>{user?.email}</span>
-                    &nbsp;
-                    <Link to='/logout' className="out">Logout</Link>
+                    <Link to="/profile" className="reg">Profile</Link>
+                    <Link to="/logout" className="out">Logout</Link>
                 </>
-                :
+            ) : (
                 <>
-                    <span>👋hello guest👋</span>
-                    &nbsp;
-                    <Link to='/register' className="reg">Register</Link>
-                    &nbsp;
-                    <Link to='/login' className="log">Login</Link>
+                    <span>Welcome, traveller</span>
+                    <Link to="/register" className="reg">Register</Link>
+                    <Link to="/login" className="log">Login</Link>
                 </>
-            }
+            )}
         </div>
     );
 }

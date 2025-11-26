@@ -1,13 +1,1 @@
-.EditCoupon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    align-self: center;
-    background-color: orange;
-}
-
-.EditCoupon label {
-    font-size: 15px;
-}
+@import "../AddCoupon/AddCoupon.css";

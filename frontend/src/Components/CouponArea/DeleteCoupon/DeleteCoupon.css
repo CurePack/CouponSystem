@@ -1,9 +1,10 @@
 .DeleteCoupon {
     height: 100%;
-	display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 16px;
 }
 
 .DeleteCoupon .box h2 {
@@ -15,12 +16,20 @@
     color: orange;
 }
 
+.delete-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .DeleteCoupon .box span {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-end;
     flex-direction: row;
+    gap: 40px;
 }
 
 .DeleteCoupon .box .cross {

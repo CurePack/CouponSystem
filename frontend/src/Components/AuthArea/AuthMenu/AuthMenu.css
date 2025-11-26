@@ -1,20 +1,41 @@
 .AuthMenu {
-	
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    border: 1px solid var(--border);
 }
 
-.AuthMenu .reg {
-    opacity: 10%;
+.AuthMenu span {
+    color: var(--text);
+    font-weight: 600;
 }
 
+.AuthMenu .reg,
+.AuthMenu .log,
+.AuthMenu .out {
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+}
+
+.AuthMenu .reg,
 .AuthMenu .log {
-    color: red;
-    font-size: 20px;
-}
-
-.AuthMenu .log:hover {
-    
+    background: linear-gradient(135deg, var(--accent), #8be5d9);
+    color: #0c1b24;
 }
 
 .AuthMenu .out {
-    color: orangered;
+    background: linear-gradient(135deg, #ff6b6b, #ff4d4d);
+    color: #0c1b24;
+}
+
+.AuthMenu a:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
 }

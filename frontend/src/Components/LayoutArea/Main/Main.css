@@ -1,17 +1,14 @@
 .Main {
     height: 100%;
     width: 100%;
-    background: #081B3F;
-    background: -moz-linear-gradient(top, #081B3F 0%, #492A15 50%, #301A8B 100%);
-    background: -webkit-linear-gradient(top, #081B3F 0%, #492A15 50%, #301A8B 100%);
-    background: linear-gradient(to bottom, #081B3F 0%, #492A15 50%, #301A8B 100%);
-    box-shadow: 0px 0px 10px 6px #000000, inset 0px 0px 12px 2px #000000;
-}
-
-.Admin {
-    height: 100%;
-    width: 100%;
-    background-size: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(106, 209, 197, 0.2), transparent 45%),
+                radial-gradient(circle at 80% 20%, rgba(249, 211, 66, 0.18), transparent 40%),
+                rgba(8, 13, 26, 0.75);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    overflow: auto;
 }
 
 .Routing{

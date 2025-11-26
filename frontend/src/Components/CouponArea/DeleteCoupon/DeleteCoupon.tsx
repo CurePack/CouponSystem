@@ -43,7 +43,9 @@ function DeleteCoupon(): JSX.Element {
       <div className="box">
         <h2>Delete Coupon</h2>
         <p>Are you sure you want to delete this, my precious?</p>
-        <FlipCard key={coupon.id} coupon={coupon} listType={"single.coupon"} />
+        <div className="delete-card-wrapper">
+          <FlipCard key={coupon.id} coupon={coupon} listType={"single.coupon"} />
+        </div>
         <span>
           <ImCross className="cross"size={42} onClick={no}/>
           <ImCheckmark className="check" size={50} onClick={yes}/>

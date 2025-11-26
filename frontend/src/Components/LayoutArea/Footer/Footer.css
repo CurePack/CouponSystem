@@ -1,9 +1,25 @@
 .Footer {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	height: 100%;
 	width: 100%;
-	color: yellow;
+	padding: 14px 18px;
+	gap: 16px;
+	border-radius: var(--radius);
+	background: var(--panel);
+	border: 1px solid var(--border);
+	color: var(--muted);
+	box-shadow: var(--shadow);
+}
+
+.Footer p {
+	flex: 1;
+	text-align: center;
+	margin: 0;
+}
+
+.Footer .Footer-spacer {
+	visibility: hidden;
 }

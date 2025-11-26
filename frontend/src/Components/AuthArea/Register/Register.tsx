@@ -19,7 +19,7 @@ function Register(): JSX.Element {
                 .email("Invalid email address"),
         clientType:
             yup.string()
-                .required("Client type is required"),
+                .required("Choose your banner"),
         password:
             yup.string()
                 .min(4, 'Your password is too short.')
@@ -31,7 +31,8 @@ function Register(): JSX.Element {
 
     });
 
-    const { register, handleSubmit, formState: { errors, isDirty, isValid } } = useForm<RegisterModel>({ mode: "all", resolver: yupResolver(schema) as any });
+    const { register, handleSubmit, setValue, watch, formState: { errors, isDirty, isValid } } = useForm<RegisterModel>({ mode: "all", resolver: yupResolver(schema) as any });
+    const watchedType = watch("clientType");
 
 
     const onSubmit = async (registerModel: RegisterModel) => {
@@ -56,35 +57,36 @@ function Register(): JSX.Element {
         <div className="Register">
 			<h2>Register</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="clientType">client type</label>
-                <br />
-                <select defaultValue="" {...register("clientType")} name="clientType">
-                    <option value="" disabled>Choose client type</option>
-                    <option value="CUSTOMER">Customer</option>
-                    <option value="COMPANY">Company</option>
-                    <option value="ADMINISTRATOR">Admin</option>
-                </select>
-                <br />
-                <span>{errors.clientType?.message}</span>
-                <br />
+                <input type="hidden" {...register("clientType")} value={watchedType || ""} />
+                <div className="client-type-group">
+                    <p className="eyebrow">Choose your banner</p>
+                    <div className="client-type-buttons">
+                        {[
+                            { key: "CUSTOMER", label: "Customer" },
+                            { key: "COMPANY", label: "Company" },
+                            { key: "ADMINISTRATOR", label: "Admin" },
+                        ].map((item) => (
+                            <button
+                                type="button"
+                                key={item.key}
+                                className={`chip ${watchedType === item.key ? "active" : ""}`}
+                                onClick={() => setValue("clientType", item.key, { shouldValidate: true })}
+                            >
+                                {item.label}
+                            </button>
+                        ))}
+                    </div>
+                    <span>{errors.clientType?.message}</span>
+                </div>
                 <label htmlFor="email">email</label>
-                <br />
                 <input type="email" {...register("email")} name="email" placeholder="email" />
-                <br />
                 <span>{errors.email?.message}</span>
-                <br />
                 <label htmlFor="password">password</label>
-                <br />
                 <input type="password" {...register("password")} name="password" placeholder="password" />
-                <br />
                 <span>{errors.password?.message}</span>
-                <br />
                 <label htmlFor="confirm">confirm password</label>
-                <br />
                 <input type="password" {...register("confirm")} name="confirm" placeholder="confirm" />
-                <br />
                 <span>{errors.confirm?.message}</span>
-                <br />
                 <button className="button-app" disabled={!isValid}>Register</button>
             </form>
         </div>

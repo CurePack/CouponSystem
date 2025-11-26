@@ -3,8 +3,139 @@
     flex-direction: column;
     overflow-y: auto;
     height: 100%;
+    color: var(--text);
+    gap: 16px;
+}
+
+.shop-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
+}
+
+.shop-title {
+    grid-column: 2;
     text-align: center;
-    color: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-title h1 {
+    /* margin: 4px 0; */
+    color: var(--primary);
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.shop-title .shop-subtitle {
+    margin: 0;
+    color: var(--muted);
+    text-align: center;
+}
+
+.filter-inline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-self: end;
+    grid-column: 3;
+}
+
+.toggle-btn {
+    width: 80px;
+    justify-self: start;
+    grid-column: 1;
+}
+
+.toggle-btn {
+    width: 80px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+    appearance: none;
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+    box-shadow: var(--shadow);
+}
+
+.filter-group .max-price-input {
+    width: 90px;
+}
+
+/* hide number spinners */
+.filter-group input[type=number]::-webkit-inner-spin-button,
+.filter-group input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.filter-group input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: rgba(249, 211, 66, 0.6);
+    box-shadow: 0 0 0 3px rgba(249, 211, 66, 0.2);
+}
+
+/* custom select dropdown */
+.filter-group select {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    padding: 10px 12px;
+    min-width: 140px;
+    box-shadow: var(--shadow);
+}
+
+.filter-group select option {
+    background: #0f1628;
+    color: var(--text);
+    padding: 8px 12px;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.08);
+    color: var(--text);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn.ghost {
+    background: rgba(255,255,255,0.04);
 }
 
 .PublicCouponList .container {
@@ -12,22 +143,5 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    height: 100%;
-}
-
-.PublicCouponList .selectMenu {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-.PublicCouponList select {
-    background-color: grey;
-}
-
-.PublicCouponList input {
-    background-color: grey;
-    height: 20px;
-    width: 70px;
+    gap: 12px;
 }

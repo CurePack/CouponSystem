@@ -22,6 +22,7 @@ function CustomerCouponList(): JSX.Element {
   const navigate = useNavigate();
   const [category, setCategory] = useState<string>();
   const [maxPrice, setMaxPrice] = useState<string>();
+  const [showBack, setShowBack] = useState<boolean>(false);
 
   useEffect(() => {
     // If we don't have a user object - we are not logged in
@@ -95,12 +96,21 @@ function CustomerCouponList(): JSX.Element {
 
   return (
     <div className="CustomerCouponList">
-      <h1>My Coupons</h1>
+      <div className="shop-header">
+        <button className="btn pill-btn toggle-btn" onClick={() => setShowBack(!showBack)}>
+          {showBack ? "Hide" : "Reveal"}
+        </button>
+        <div className="shop-title">
+          <h1>My Coupons</h1>
+          <p className="shop-subtitle">Your collected treasures from across Middle-earth.</p>
+        </div>
+        <div className="filter-inline"></div>
+      </div>
       {coupons?.length > 0 ? (
         <div className="container">
           {/*{coupons.map((coupon) => (<CouponItem key={coupon.id} coupon={coupon} />))}*/}
           {coupons.map((coupon) => (
-            <FlipCard key={coupon.id} coupon={coupon} listType={"coupons.customer"} />
+            <FlipCard key={coupon.id} coupon={coupon} listType={"coupons.customer"} forceBack={showBack} />
           ))}
         </div>
         

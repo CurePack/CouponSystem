@@ -3,14 +3,38 @@ import "./About.css";
 function About(): JSX.Element {
     return (
         <div className="About">
-			<h1>Hello</h1>
-            <p>This website is not as nice looking and not as functional as I wanted it to be, but I still do think that I did a great job on both mechanics and the User Interface.</p>
-            <p>Surely, I've spent lots of hours on building the back-end for this website, and that, so I thought was the hardest part. But then came the React with typescript...</p>
-            <p>I hope you are enjoying the UI although it is full of bugs :) </p>
-            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-            <p>All rights reserved to Dmitry Balakhnov, the creator of this project. Font doesn't belong to me, neither does react or VSC / IntelliJ</p>
+            <div className="About-description">
+                <h1>About LordOfCoupons</h1>
+                <p>
+                    LordOfCoupons is a full-stack coupon marketplace where admins onboard companies and customers, companies publish and maintain coupons, and customers browse and purchase deals. The backend is a Spring Boot service exposing REST APIs secured with token-based auth, backed by JPA/H2 with scheduled cleanup for expired coupons.
+                </p>
+                <p>
+                    The backend layers include DTO mappers, service interfaces with role-specific implementations, JPA repositories for company/customer/coupon persistence, and token utilities that expire sessions after 30 minutes. Controllers expose routes for login/register, public coupon browsing with filters, and role-gated operations for companies, customers, and admins.
+                </p>
+                <p>
+                    The frontend is a React + TypeScript SPA that uses Redux slices for auth and domain state, Axios with an interceptor to inject the token, and a Notyf wrapper for notifications. Routing (React Router v6) drives public browsing, company CRUD, customer purchases, admin panels, and static pages. Shared components like flip cards, headers, filters, and empty states keep the UI cohesive.
+                </p>
+                <p>
+                    Data flows from the REST API through typed WebApi helpers and Redux actions into UI components. Public and customer coupon lists support category and price filters with animated flip cards. Admin panels manage companies and customers, while companies maintain coupons with validation and ownership checks enforced server-side.
+                </p>
+                <p>
+                    Deployment serves the bundled SPA from <code>backend/src/main/resources/static</code> alongside the API. Tooling includes CRA-style build scripts, a Dockerfile, Procfile, and Heroku-style settings.
+                </p>
+            </div>
+            <div className="About-quotes">
+                <div className="phrase-box">
+                    <h2>"All we have to decide is what to do with the time that is given us."</h2>
+                    <p>- J.R.R. Tolkien, The Fellowship of the Ring</p>
+                </div>
+                <div className="phrase-box">
+                    <h2>"The wise speak only of what they know"</h2>
+                    <p>- J.R.R. Tolkien, The Two Towers</p>
+                </div>
+                <div className="phrase-box">
+                    <h2>"It's the job that's never started as takes longest to finish."</h2>
+                    <p>- J.R.R. Tolkien, The Lord of the Rings</p>
+                </div>
+            </div>
         </div>
     );
 }

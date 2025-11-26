@@ -30,35 +30,34 @@ function Menu(): JSX.Element {
                 ?
                 <>
                     <CustomLink to="/home">Home</CustomLink>
+                    <CustomLink to="/profile">Profile</CustomLink>
                     <CustomLink to="/admin/companies">Companies</CustomLink>
                     <CustomLink to="/admin/customers">Customers</CustomLink>
                     <CustomLink to="/about">About</CustomLink>
-                    <CustomLink to="/credits">Credits</CustomLink>
                 </>
                 :
                 (user?.clientType === 'COMPANY')
                 ?
                 <>
                     <CustomLink to="/home">Home</CustomLink>
+                    <CustomLink to="/profile">Profile</CustomLink>
                     <CustomLink to="/companies/coupons">My Coupons</CustomLink>
                     <CustomLink to="/about">About</CustomLink>
-                    <CustomLink to="/credits">Credits</CustomLink>
                 </>
                 :
                 (user?.clientType === 'CUSTOMER')
                 ?
                 <>
                     <CustomLink to="/home">Home</CustomLink>
+                    <CustomLink to="/profile">Profile</CustomLink>
                     <CustomLink to="/public/coupons">Coupons Shop</CustomLink>
                     <CustomLink to="/customers/coupons">My Coupons</CustomLink>
                     <CustomLink to="/about">About</CustomLink>
-                    <CustomLink to="/credits">Credits</CustomLink>
                 </>
                 :
                 <>
                     <CustomLink to="/home">Home</CustomLink>
                     <CustomLink to="/about">About</CustomLink>
-                    <CustomLink to="/credits">Credits</CustomLink>
                 </>
                 }
         </div>

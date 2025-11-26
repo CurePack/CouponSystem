@@ -1,13 +1,80 @@
 .About {
     height: 100%;
     overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 12px 10px;
+}
+
+.About-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 50vw;
+}
+
+.About-description h1 {
+    margin: 0 0 6px 0;
+    font-size: 1.35rem;
+}
+
+.About-description p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.About-quotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px;
+    padding: 6px;
+}
+
+.About .phrase-box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6px;
+    padding: 12px 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    width: fit-content;
+    max-width: min(720px, 95%);
+    text-align: center;
 }
 
 .About p {
-    margin: 5px;
-
+    margin: 4px;
+    font-size: 0.95rem;
+    line-height: 1.35;
 }
 
-.About p:first-letter {
-    font-size: 50px;
+.About h2 {
+    margin: 6px 0;
+    font-size: 1.15rem;
+    line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+    .About {
+        grid-template-columns: 1fr;
+    }
+
+    .About-description {
+        max-width: 100%;
+    }
+
+    .About-quotes {
+        justify-content: center;
+    }
 }

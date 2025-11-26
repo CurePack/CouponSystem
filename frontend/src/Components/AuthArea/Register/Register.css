@@ -5,4 +5,50 @@
     flex-direction: column;
     height: 100%;
     align-self:center;
+    gap: 14px;
+    color: var(--text);
+}
+
+.Register h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+}
+
+.Register form {
+    gap: 10px;
+    padding: 20px 22px;
+}
+
+.client-type-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.client-type-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.chip.active {
+    background: linear-gradient(135deg, var(--primary), #f5b53f);
+    color: #0c1b24;
+    border-color: transparent;
+    box-shadow: var(--shadow);
+}
+
+.chip:hover {
+    transform: translateY(-1px);
 }
